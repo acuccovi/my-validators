@@ -27,6 +27,8 @@ public @interface NotOneOf {
 
 	/**
 	 * A list of words used to perform the check
+	 *
+	 * @return the list of words
 	 */
 	String[] options();
 

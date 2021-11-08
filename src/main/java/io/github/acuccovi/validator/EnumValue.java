@@ -24,12 +24,16 @@ public @interface EnumValue {
 
 	/**
 	 * The Enum class used to validate the input string
+	 *
+	 * @return the Enum class
 	 */
 	Class<? extends Enum<?>> enumClass();
 
 	/**
 	 * Indicates whether ignore the case of the input sting when validating
 	 * Default false
+	 *
+	 * @return the value of ignoreCase
 	 */
 	boolean ignoreCase() default false;
 
