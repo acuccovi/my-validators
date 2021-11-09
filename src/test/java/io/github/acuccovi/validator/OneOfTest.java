@@ -16,27 +16,35 @@ import static org.junit.Assert.assertEquals;
 
 public class OneOfTest {
 
-	@Test
-	public void notOneOfValidatorTestFail() {
+    @Test
+    public void notOneOfValidatorTestFail() {
 
-		OneOfBean bean = new OneOfBean("Hey Joe");
-		long count = validateAndGetViolationsCountWithMessage(bean, "The value 'Hey Joe' is not valid'");
-		assertEquals(1L, count);
-	}
+        OneOfBean bean = new OneOfBean("Hey Joe");
+        long count = validateAndGetViolationsCountWithMessage(bean, "The value 'Hey Joe' is not valid'");
+        assertEquals(1L, count);
+    }
 
-	@Test
-	public void notOneOfValidatorTestSuccess() {
+    @Test
+    public void notOneOfValidatorTestSuccess() {
 
-		OneOfBean bean = new OneOfBean("World");
-		int count = validateAndGetViolationsCount(bean);
-		assertEquals(0, count);
-	}
+        OneOfBean bean = new OneOfBean("World");
+        int count = validateAndGetViolationsCount(bean);
+        assertEquals(0, count);
+    }
 
-	@Test
-	public void notOneOfValidatorTestFailV2() {
+    @Test
+    public void notOneOfValidatorTestFailV2() {
 
-		OneOfBeanV2 bean = new OneOfBeanV2("Hey Joe");
-		long count = validateAndGetViolationsCountWithMessage(bean, "Are you sure?");
-		assertEquals(1L, count);
-	}
+        OneOfBeanV2 bean = new OneOfBeanV2("Hey Joe");
+        long count = validateAndGetViolationsCountWithMessage(bean, "Are you sure?");
+        assertEquals(1L, count);
+    }
+
+    @Test
+    public void notOneOfValidatorTestFailV2IgnoringCase() {
+
+        OneOfBeanV2 bean = new OneOfBeanV2("Hey Joe");
+        long count = validateAndGetViolationsCountWithMessage(bean, "Are you sure?");
+        assertEquals(1L, count);
+    }
 }

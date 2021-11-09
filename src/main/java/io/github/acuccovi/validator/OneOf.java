@@ -20,20 +20,28 @@ import java.lang.annotation.Target;
  * @version 1.0.0
  */
 @Constraint(validatedBy = OneOfConstraintValidator.class)
-@Target( { ElementType.FIELD } )
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface OneOf {
 
-	/**
-	 * A list of words used to perform the check
-	 *
-	 * @return the list of words
-	 */
-	String[] options();
+    /**
+     * A list of words used to perform the check
+     *
+     * @return the list of words
+     */
+    String[] options();
 
-	String message() default "{io.github.acuccovi.validator.OneOf.message}";
+    /**
+     * Indicates whether ignore the case of the input sting when validating
+     * Default false
+     *
+     * @return the value of ignoreCase
+     */
+    boolean ignoreCase() default false;
 
-	Class<?>[] groups() default {};
+    String message() default "{io.github.acuccovi.validator.OneOf.message}";
 
-	Class<? extends Payload>[] payload() default {};
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
 }

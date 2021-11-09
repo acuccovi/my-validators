@@ -11,11 +11,11 @@ import io.github.acuccovi.validator.EnumValue;
 
 public class EnumBeanV2 {
 
-	@EnumValue(enumClass = TestEnum.class, ignoreCase = true, message = "'{enumClass}' does not contains '${validatedValue}'")
-	final String enumVal;
+    @EnumValue(enumClass = TestEnum.class, ignoreCase = true, message = "'{enumClass}' does not contains '${validatedValue}'")
+    final String enumVal;
 
-	public EnumBeanV2(String enumVal) {
+    public EnumBeanV2(String enumVal) {
 
-		this.enumVal = enumVal;
-	}
+        this.enumVal = enumVal;
+    }
 }

@@ -10,11 +10,11 @@ import io.github.acuccovi.validator.NotOneOf;
 
 public class NotOneOfBean {
 
-	@NotOneOf(options = {"Hello", "World", "Hey Joe!"})
-	String value;
+    @NotOneOf(options = {"Hello", "World", "Hey Joe!"})
+    String value;
 
-	public NotOneOfBean(String value) {
+    public NotOneOfBean(String value) {
 
-		this.value = value;
-	}
+        this.value = value;
+    }
 }

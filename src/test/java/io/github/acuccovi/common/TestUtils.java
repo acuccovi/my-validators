@@ -13,31 +13,29 @@ import java.util.Set;
 
 public class TestUtils {
 
-	private static final Validator validator;
+    private static final Validator validator;
 
-	static {
+    static {
 
-		validator = Validation.buildDefaultValidatorFactory().getValidator();
-	}
+        validator = Validation.buildDefaultValidatorFactory().getValidator();
+    }
 
-	private TestUtils() {
+    private TestUtils() {
 
-	}
+    }
 
-	public static int validateAndGetViolationsCount(Object bean) {
+    public static int validateAndGetViolationsCount(Object bean) {
 
-		Set<ConstraintViolation<Object>> violations = validator.validate(bean);
-		return violations.size();
-		//return validator.validate(bean).size();
-	}
+        return validator.validate(bean).size();
+    }
 
-	public static long validateAndGetViolationsCountWithMessage(Object bean, String message) {
+    public static long validateAndGetViolationsCountWithMessage(Object bean, String message) {
 
-		return validateBean(bean).stream().filter(v -> v.getMessage().equals(message)).count();
-	}
+        return validateBean(bean).stream().filter(v -> v.getMessage().equals(message)).count();
+    }
 
-	public static Set<ConstraintViolation<Object>> validateBean(Object bean) {
+    public static Set<ConstraintViolation<Object>> validateBean(Object bean) {
 
-		return validator.validate(bean);
-	}
+        return validator.validate(bean);
+    }
 }
