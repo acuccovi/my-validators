@@ -39,4 +39,12 @@ public class NotOneOfTest {
 		long count = validateAndGetViolationsCountWithMessage(bean, "Are you sure?");
 		assertEquals(1L, count);
 	}
+
+	@Test
+	public void notOneOfValidatorTestFailV2IgnoringCase() {
+
+		NotOneOfBeanV2 bean = new NotOneOfBeanV2("world");
+		long count = validateAndGetViolationsCountWithMessage(bean, "Are you sure?");
+		assertEquals(1L, count);
+	}
 }

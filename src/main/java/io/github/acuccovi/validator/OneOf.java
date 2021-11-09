@@ -31,6 +31,14 @@ public @interface OneOf {
 	 */
 	String[] options();
 
+	/**
+	 * Indicates whether ignore the case of the input sting when validating
+	 * Default false
+	 *
+	 * @return the value of ignoreCase
+	 */
+	boolean ignoreCase() default false;
+
 	String message() default "{io.github.acuccovi.validator.OneOf.message}";
 
 	Class<?>[] groups() default {};

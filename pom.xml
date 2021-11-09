@@ -6,7 +6,7 @@
 
     <groupId>io.github.acuccovi.validator</groupId>
     <artifactId>MyValidators</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>My Validators</name>
     <description>A collection of bean validators</description>

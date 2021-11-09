@@ -14,11 +14,13 @@ import javax.validation.ConstraintValidatorContext;
 public class OneOfConstraintValidator implements ConstraintValidator<OneOf, String> {
 
 	private String[]	options;
+	private boolean  ignoreCase;
 
 	@Override
 	public void initialize(OneOf annotation) {
 
 		options = annotation.options();
+		ignoreCase = annotation.ignoreCase();
 
 		ConstraintValidator.super.initialize(annotation);
 	}
@@ -26,6 +28,8 @@ public class OneOfConstraintValidator implements ConstraintValidator<OneOf, Stri
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 
-		return StringUtils.equalsAnyIgnoreCase(value, options);
+		return ignoreCase ?
+				StringUtils.equalsAnyIgnoreCase(value, options) :
+				StringUtils.equalsAny(value, options);
 	}
 }

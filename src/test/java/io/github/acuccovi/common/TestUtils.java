@@ -26,9 +26,7 @@ public class TestUtils {
 
 	public static int validateAndGetViolationsCount(Object bean) {
 
-		Set<ConstraintViolation<Object>> violations = validator.validate(bean);
-		return violations.size();
-		//return validator.validate(bean).size();
+		return validator.validate(bean).size();
 	}
 
 	public static long validateAndGetViolationsCountWithMessage(Object bean, String message) {
