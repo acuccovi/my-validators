@@ -6,11 +6,11 @@
 
     <groupId>io.github.acuccovi.validator</groupId>
     <artifactId>MyValidators</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>My Validators</name>
     <description>A collection of bean validators</description>
-    <url>https://acuccovi.github.io/My-Validators</url>
+    <url>https://acuccovi.github.io/my-validators</url>
     <inceptionYear>2021</inceptionYear>
 
     <licenses>
