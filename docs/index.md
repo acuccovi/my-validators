@@ -11,7 +11,7 @@ Simply add the maven dependency as follows
 <dependency>
     <groupId>io.github.acuccovi.validator</groupId>
     <artifactId>MyValidators</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
