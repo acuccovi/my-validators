@@ -15,6 +15,8 @@ Simply add the maven dependency as follows
 </dependency>
 ```
 
+If you don't use any tool to automate the dependency management you can download the files from the [Releases](https://github.com/acuccovi/my-validators/releases) page
+
 ### Validators
 
 Following the list of the validators:
