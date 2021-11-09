@@ -13,23 +13,23 @@ import javax.validation.ConstraintValidatorContext;
 
 public class NotOneOfConstraintValidator implements ConstraintValidator<NotOneOf, String> {
 
-	private String[]	options;
-	private boolean  ignoreCase;
+    private String[] options;
+    private boolean ignoreCase;
 
-	@Override
-	public void initialize(NotOneOf annotation) {
+    @Override
+    public void initialize(NotOneOf annotation) {
 
-		options = annotation.options();
-		ignoreCase = annotation.ignoreCase();
+        options = annotation.options();
+        ignoreCase = annotation.ignoreCase();
 
-		ConstraintValidator.super.initialize(annotation);
-	}
+        ConstraintValidator.super.initialize(annotation);
+    }
 
-	@Override
-	public boolean isValid(String value, ConstraintValidatorContext context) {
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
 
-		return ignoreCase ?
-				!StringUtils.equalsAnyIgnoreCase(value, options) :
-				!StringUtils.equalsAny(value, options);
-	}
+        return ignoreCase ?
+                !StringUtils.equalsAnyIgnoreCase(value, options) :
+                !StringUtils.equalsAny(value, options);
+    }
 }
